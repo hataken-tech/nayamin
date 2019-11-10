@@ -1,0 +1,7 @@
+
+<%= stylesheet_link_tag "other" %>
+<%= link_to("今抱えている悩みをここに書くことでどんなメリットあるのか？", "/write_merit", {class:"underline"}) %>
+<%= form_tag("/nayamin") do %>
+  <textarea type="text" name="name" placeholder="400文字以内で入力してください"></textarea>
+  <button>送信</button>
+<% end %>

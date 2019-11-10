@@ -1,0 +1,394 @@
+<script src="jquery-3.4.1.min.js"></script>
+
+<script>
+      $(function(){
+         var target;
+         var targets = [];
+         $("section").hide();
+         $("#0").show();
+         $("button:not(.back)").on("click",function(){
+            target = $(this).attr("target");
+            targets.push(target);
+            console.log(target);
+            $("section").hide();
+            $("#"+target).show();
+         });
+         $(".back").on("click",function(){
+            console.log($('button[target="'+target+'"]'));
+            console.log(target);
+            $('button[target="'+targets[targets.length-2]+'"]').trigger("click");
+         });
+         $('a').hover(
+             function(){
+                 if($(this).next().hasClass("message")===true){
+                    $(this).next().show();
+                 };
+            },
+            
+            function() {
+                if($(this).next().hasClass("message")===true){
+                $(this).next().hide();
+                };
+            }
+         );
+         
+         
+      });
+ </script>
+ 
+  <article><!--１つめの質問-->
+      <section id="0">
+         <p id="ptag">悩み自動解決サービス</p>
+         <h1>なやみん</h1>
+         <div class="chatting">
+            <div class="says">
+               <p>一人で抱え込まないで！</p>
+            </div>
+         </div>
+         <button target="1" class="kaiketsu-button">悩みを解決する</button>
+         <button target="solution-list">解決策一覧</button>
+         <button target="write">悩みを書き込む</button>
+         <button target="board">掲示板</button>
+      </section>
+      
+      <section id="1">
+         <div class="chatting">
+            <div class="says">
+               <p>今あなたが抱えている悩みは次の選択肢のうち、どれに一番近いかしら？</p>
+            </div>
+         </div>
+         <button target="1-1">複数の選択肢が頭の中に浮かんでいるが、その中から選択肢を絞ることができない</button>
+         <button target="2-1">選択肢はすでに１つに絞れているが、何かが障壁に<br>なっていて実行に移すことができない</button>
+         <button target="3-1">そもそも選択肢が頭の中に浮かんでおらず、何をしていいのか分からないのが悩み</button>
+      </section>
+      
+      <section id="1-1">
+         <div class="chatting">
+            <div class="says">
+               <p>選択肢は明確なの？</p>
+            </div>
+         </div>
+         <button type="button" class="back" >戻る</button>
+         <button target="1-2">YES</button>
+         <button target="1-5">NO</button>
+      </section>
+      
+      <section id="1-2">
+         <div class="chatting">
+            <div class="says">
+               <p>今の段階で、それぞれの選択肢を選んだ時のメリットとデメリットは明確なの？</p>
+            </div>
+         </div>
+         <button type="button" class="back" >戻る</button>
+         <button target="solved">YES</button>
+         <button target="1-3">NO</button>
+      </section>
+      
+      <section id="1-3">
+         <div class="chatting">
+            <div class="says">
+               <p>今からメリットとデメリットを明確化するために行動できそう？</p>
+            </div>
+         </div>
+         <button type="button" class="back" >戻る</button>
+         <button target="solved">YES</button>
+         <button target="1-4">NO</button>
+      </section>
+      
+      <section id="1-4">
+         <div class="chatting">
+            <div class="says">
+               <p>行動に移せない理由は次の選択肢の中でどれに一番近いの？</p>
+            </div>
+         </div>
+         <button type="button" class="back" >戻る</button>
+         <button target="motivation">やる気が出ない</button>
+         <button target="stress">ストレスや不安</button>
+         <button target="my-lack">自分の能力や知識が足りないこと</button>
+      </section>
+      
+      <section id="1-5">
+         <div class="chatting">
+            <div class="says">
+               <p>選択肢を明確化できそう？</p>
+            </div>
+         </div>
+         <button type="button" class="back" >戻る</button>
+         <button target="1-2">YES</button>
+         <button target="1-6">NO</button>
+      </section>
+      
+      <section id="1-6">
+         <div class="chatting">
+            <div class="says">
+                <p>選択肢を明確化できない原因は次の選択肢のうちどれが一番近いかしら？</p>
+            </div>
+         </div>
+         <button type="button" class="back" >戻る</button>
+         <button target="motivation">やる気が出ない</button>
+         <button target="stress">ストレスや不安が原因で選択肢を考えるのがめんどくさい</button>
+         <button target="my-lack">今の自分の能力や知識量では選択肢を明確化できない</button>
+      </section>
+   </article>
+   
+   
+   
+   
+   
+   <article><!--２つめの質問-->
+      <section id="2-1">
+         <div class="chatting">
+            <div class="says">
+                <p>障壁を明確化できそう？</p>
+            </div>
+         </div>
+         <button type="button" class="back" >戻る</button>
+         <button target="2-2">YES</button>
+         <button target="sorry">NO</button>
+      </section>
+      
+      <section id="2-2">
+         <div class="chatting">
+            <div class="says">
+                <p>障壁は何かしら？</p>
+            </div>
+         </div>
+         <button type="button" class="back" >戻る</button>
+         <button target="motivation">やる気が出ない</button>
+         <button target="stress">ストレスや不安が原因で考えるのがめんどくさい</button>
+         <button target="my-lack">自分の能力や知識不足</button>
+      </section>
+   </article>
+   
+   
+   
+   
+   
+   <article><!--３つめの質問-->
+      <section id="3-1">
+         <div class="chatting">
+            <div class="says">
+                <p>何をするべきか考えようとすると何かが障壁になって考えるのを邪魔してくるの？</p>
+            </div>
+         </div>
+         <button type="button" class="back" >戻る</button>
+         <button target="3-2">YES</button>
+         <button target="3-3">NO</button>
+      </section>
+      
+      <section id="3-2">
+         <div class="chatting">
+            <div class="says">
+               <p>障壁の名は言えるかしら？</p>
+            </div>
+         </div>
+         <button type="button" class="back" >戻る</button>
+         <button target="motivation">やる気が出ない</button>
+         <button target="stress">ストレス</button>
+         <button target="pressure">完璧主義からうまれるプレッシャー</button>
+         <button target="sorry">疲労</button>
+      </section>
+      
+      <section id="3-3">
+         <div class="chatting">
+            <div class="says">
+               <p>恐らくだけど、今のあなたは難しく考えすぎて頭の中がこんがらがっていると思うの。
+               <br>一旦、頭の中を軽く整理することで客観的に自分の現状を把握する必要があるからその方法を紹介するわ</p>
+            </div>
+         </div>
+         <button type="button" class="back" >戻る</button>
+         <button target="all-solve">解決策</button>
+      </section>
+   
+   </article>
+   
+   
+   
+   
+   
+   <article><!--解決策-->
+      <section id="motivation">
+         <p id="solution">👑解決策一覧👑</p>
+         <button type="button" class="back" >戻る</button>
+         <button target="final_question">軽い運動をする（筋トレ、散歩など）</button>
+         <button target="final_question">音楽を聴きながら作業をする</button>
+         <button target="final_question">自然がきれいなところや公園、神社などに行く</button>
+         <button target="final_question">別の作業をする</button>
+         <button target="final_question">作業に取り掛かるハードルを低くしてその後は慣性の法則</button>
+         <button target="final_question">失うものに着目する</button>
+         <button target="final_question">頑張った後の御褒美を用意する</button>
+         <button target="motivation_root">自分のモチベーションの根源を確認して、やる気が出るように工夫する</button>
+         <button target="solution-list">他の解決策を見る</button>
+      </section>
+      
+      <section id="motivation_root">
+         <p id="solution">👑解決策一覧👑</p>
+         <button type="button" class="back" >戻る</button>
+         <button target="final_question">人生楽しみたい（幸福度上げたい）</button>
+         <button target="final_question">モテたい</button>
+         <button target="final_question">カッコつけたい（自分自身がその行動をしている自分を<br>客観的に見たときにカッコイイと思う行動をとりたい</button>
+         <button target="final_question">自分がすごいと思う人に褒められたい</button>
+      </section>
+   
+      <section id="stress">
+         <p id="solution">👑解決策一覧👑</p>
+         <button type="button" class="back" >戻る</button>
+         <button target="final_question">お笑い動画を見る（15分以内）</button>
+         <button target="final_question">とりあえず、今作業をしていない時間が勿体ないので他の作業をする</button>
+         <button target="solution-list">他の解決策を見る</button>
+      </section>
+      
+      <section id="my-lack">
+         <p id="solution">👑解決策一覧👑</p>
+         <button type="button" class="back" >戻る</button>
+         <button target="final_question">その問題を解決するのに必要な知識や能力を身に付ける</button>
+         <button target="final_question">他人に相談する</button>
+         <button target="solution-list">他の解決策を見る</button>
+      </section>
+      
+      <section id="pressure">
+         <p id="solution">👑解決策一覧👑</p>
+         <button type="button" class="back" >戻る</button>
+         <button target="final_question">その悩みの重要度を考える（そんなに重要ではないことが分かるので<br>プレッシャーが軽減される</button>
+         <button target="final_question">作業に取り掛かるハードルを低くして、その後は完成の法則</button>
+         <button target="final_question">とりあえず今の作業をしていない時間が勿体ないので他の作業をする</button>
+         <button target="solution-list">他の解決策を見る</button>
+      </section>
+      
+      <section id="sleepy">
+         <p id="solution">👑解決策一覧👑</p>
+         <button type="button" class="back" >戻る</button>
+         <button target="final_question">階段を10分間昇り降りする</button>
+         <button target="solution-list">他の解決策を見る</button>
+      </section>
+      
+      <section id="depressed">
+         <p id="solution">👑解決策一覧👑</p>
+         <button type="button" class="back" >戻る</button>
+         <button target="final_question">楽しかった時の写真や動画を約10分間見る</button>
+         <button target="final_question">自然がきれいな場所へ行く</button>
+         <button target="solution-list">他の解決策を見る</button>
+      </section>
+   
+      <section id="frustration">
+         <p id="solution">👑解決策一覧👑</p>
+         <button type="button" class="back" >戻る</button>
+         <button target="final_question">1人文通</button>
+         <button target="solution-list">他の解決策を見る</button>
+      </section>
+      
+      <section id="impatient">
+         <p id="solution">👑解決策一覧👑</p>
+         <button type="button" class="back" >戻る</button>
+         <button target="final_question">1.2分間深呼吸<br>2.焦りの感情をポジティブに捉える（この焦りを感じている理由は、
+         頑張るために自分の身体がエネルギーを作っているからだ。だからこのエネルギーを正しく使うことができればパフォーマンスを上げることができる
+         <br>3.他人のために何かする（ゴミ拾いをしたり、ネットで募金したりなど）</button>
+         <button target="final_question">やるべきことを紙に箇条書きで全部書き出してみる</button>
+         <button target="solution-list">他の解決策を見る</button>
+      </section>
+      
+      <section id="nervous">
+         <p id="solution">👑解決策一覧👑</p>
+         <button type="button" class="back" >戻る</button>
+         <button target="final_question">1人文通</button>
+         <button target="solution-list">他の解決策を見る</button>
+      </section>
+      
+      <section id="all-solve">
+         <p id="solution">👑解決策一覧👑</p>
+         <div class="chatting">
+            <div class="says">
+               <p>ここに書いている解決策はどれも自分を客観的に見るためには効果的な方法よ！
+               <br>他人視点で自分を見ることは多くの悩み解決に有効な手段なのよ</p>
+            </div>
+         </div>
+         <button type="button" class="back" >戻る</button>
+         <button target="final_question">誰かに相談する</button>
+         <button target="final_question">夜に「瞑想＋散歩」をする</button>
+         <button target="final_question">10-15分の間しゃべりながら紙に思っていることを殴り書きする</button>
+         <button target="solution-list">他の解決策を見る</button>
+      </section>
+   </article>
+   
+   
+   
+   
+   
+   <article><!--その他-->
+      <section id="final_question">
+         <div class="chatting">
+            <div class="says">
+               <p>本当に実行できそうなの？</p>
+            </div>
+         </div>
+         <button target="0">YES（トップに戻る）</button>
+         <button target="got-angry">NO</button>
+      </section>
+      
+      <section id="got-angry">
+         <div class="chatting">
+            <div class="says">
+               <p>はぁ？なんで実行できないの！？<br>あなたの悩みを解決するために私がどれだけ協力してあげたと思ってるの！？
+               <br>これだけ頑張った私のためにも行動に移しなさいよ！！</p>
+            </div>
+         </div>
+         <p>これで行動できそうですか？</p>
+         <button target="tell-the-truth">YES</button>
+         <button target="gave-up">NO</button>
+      </section>
+      
+      <section id="tell-the-truth">
+         <div class="chatting">
+            <div class="says">
+               <p>よかったわ。実は今の怒ったフリだったの。あなたに行動してもらうために一芝居うったのよ
+               <br>これもあなたのためなんだから悪く思わないでね♡</p>
+            </div>
+         </div>
+         <button target="0" class="top">トップに戻る</button>
+      </section>
+      
+      <section id="gave-up">
+         <div class="chatting">
+            <div class="says">
+               <p>もうあなたのことは知らないわ。他をあたってちょうだい</p>
+            </div>
+         </div>
+         <p>残念ながらあなたは見捨てられたようです・・・</p>
+         <button target="0" class="top">トップに戻る</button>
+      </section>
+      
+      <section id="solved">
+         <h2>おめでとう！悩み解決完了！</h2>
+         <div class="chatting">
+            <div class="says">
+               <p>本当に悩みを解決できたの？</p>
+            </div>
+         </div>
+         <button target="0">YES（トップに戻る）</button>
+         <button target="sorry">NO</button>
+      </section>
+      
+      <section id="sorry">
+         <div class="chatting">
+            <div class="says">
+               <p>ごめんなさい、ここから先はまだできていないの。。。</p>
+            </div>
+         </div>
+         <button target="0" class="top">トップページに戻る</button>
+      </section>
+   
+      
+      <section id="the-answer">
+         <div class="chatting">
+            <div class="says">
+               <p>もし今あなたが悩みを抱えているなら、過去に解決できた悩みの一覧を見ることで今悩んでいるのが少しバカバカしくなって気がラクになるかもしれないわ。なんでこんなことが起こるかっていうと、人間って悩んでいるときはどうしても視野が狭まってしまって、「今悩んでいることは絶対に解決しないといけない悩みだ」と思い込んでしまう性質があるの。でもその悩みって他人から見ると「それってそんなに大事な悩みなの？」と感じるケースが多々あるわ。この他人視点で今の自分を見るってことが大事なの。
+こうすることで今の悩みが自分で思っているほど実はそんなに重要ではないってことに気づいて、すごく気が楽になるわ。ただ、客観的に自分を見ることってすごく難しいことなのよ。でも、この「過去に自分が悩んでいたことを見る」って作業をすることで簡単に今の自分を他人視点で見ることができるわ。例えば、今あなたが過去の悩みの一覧を見たらきっとこう思うはずよ。
+「なーんだ。過去の自分はこんな小さなことで悩んでいたのか。当時の自分はその悩みを重く捉えていたけど、今となってみれば別にそこまで考え込む必要はなかったな（笑）。ん、、、？待てよ。過去の悩みがそんな大したことなかったんなら今の悩みもそんなに深く考え込む必要はないんじゃないか？？」
+こう思えることで悩み解決に一気に近づくことだってあるの。
+</p>
+            </div>
+         </div>
+         <button target="0" class="top">トップに戻る</button>
+      </section>
+      
+   </article>

@@ -1,0 +1,10 @@
+<%= stylesheet_link_tag "users" %>
+    <div class="my-form">
+    　
+      <img src="<%= "/user_images/#{@current_user.image_name}" %>">
+    
+      <h2><%= @current_user.name %></h2>
+    
+      <p><%= @current_user.email %></p>
+      <%= link_to("編集", "/users/#{@current_user.id}/edit", {class:"sign"}) %>
+   </div>

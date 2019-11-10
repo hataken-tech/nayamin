@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag "solution" %>
+<p id="solution">👑解決策一覧👑</p>
+<div class="box solution">
+   <ul>
+      <li>
+         <%= link_to("誰かと話す","/final_question") %>
+         <p class="message">＜解説＞<br>眠くなる原因は、主に副交感神経が活発化することが原因に挙げられます。逆に交感神経を活発化することができれば副交感神経の活発化を防ぎ、眠気を飛ばすことができます。そのうえで、人と話すことは非常に有効な手段の1つです</p>
+      </li>
+      <li>
+         <%= link_to("運動する（オススメは、階段の昇り降りを10分間すること）","/final_question") %>
+         <p class="message">＜解説＞<br>上記の「誰かと話す」の部分で説明したのと同じ原理で、運動することは交感神経を活発化させるのに有効な手段の1つです</p>
+      </li>
+      <li class="border-none">
+         <%= link_to("他の解決策を見る","/solution_list") %>
+      </li>
+   </ul>
+</div>
+

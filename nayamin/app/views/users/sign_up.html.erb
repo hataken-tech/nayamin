@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag "users" %>
+
+        <%= form_tag("/create") do %>
+          <div class="input-form sign-up">  
+            <p class="ptag-margin">新規登録</p>
+            <input type="text" name="name" placeholder="ユーザーネーム">
+        
+            <input type="email" name="email" placeholder="メールアドレス">
+      
+            <input type="password" name="password" placeholder="パスワード">
+          
+            <button>登録する</button>
+          </div>
+        <% end %>
+        <div class="second-form sign-up-form">
+       
+          <p class="ptag-margin">アカウントをお持ちですか？ </p>
+          <%= link_to("ログインする", "/sign_in", {class:"sign"}) %>
+        </div>

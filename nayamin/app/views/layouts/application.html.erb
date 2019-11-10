@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nayamin</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Kosugi Maru" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=M PLUS 1p" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <a href="https://drive.google.com/open?id=1COoEuqfNxR_kt8KS9dVkada1XLC8UcNW" target="_blank">なやみんの使い方</a>
+      
+      <ul>
+      <% if @current_user %>
+          <li>
+            <%= link_to("トップ","/") %>
+            <%= link_to("解決策一覧","/solution_list") %>
+            <%= link_to("悩みを吐く","/write") %>
+            <%= link_to("過去の悩み","/board") %>
+            <%= link_to("ログアウト","/logout") %>
+            <%= link_to(@current_user.name,"/mypage") %>
+          </li>
+      <% else %>
+          <li>
+            <%= link_to("トップ","/") %>
+            <%= link_to("解決策一覧","/solution_list") %>
+            <%= link_to("ログイン","/sign_in") %>
+            <%= link_to("新規登録","/sign_up") %>
+          </li>
+      <% end %>
+      </ul>
+      
+    </header>
+    
+     <% if flash[:notice] %>
+      <div class="flash notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    
+    <% if flash[:danger] %>
+      <div class="flash danger">
+        <%= flash[:danger] %>
+      </div>
+    <% end %>
+    <%= yield %>
+    
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+      window.setTimeout(function() {
+        $(".flash").slideUp();
+      }, 3000);
+      
+      $(function(){
+        $(".message").hide();
+        $('a').hover(
+             function(){
+                 if($(this).next().hasClass("message")===true){
+                    $(this).next().show();
+                 };
+            },
+            
+            function() {
+                if($(this).next().hasClass("message")===true){
+                $(this).next().hide();
+                };
+            }
+         );
+      });
+    </script>
+    
+  </body>
+</html>

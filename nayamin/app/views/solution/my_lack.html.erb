@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag "solution" %>
+<p id="solution">👑解決策一覧👑</p>
+<div class="box solution">
+   <ul>
+      <li>
+         <%= link_to("悩みを解決するのに必要な知識や能力を身に付ける","/final_question") %>
+         <p class="message">＜解説＞<br>今の自分が持っている知識や能力では答えを導き出せない悩みがあるのは当然なので、その答えを見つけるにはネットや本で勉強することが一番です</p>
+      </li>
+      <li>
+         <%= link_to("誰かに相談する","/final_question") %>
+         <p class="message">＜解説＞<br>誰かに相談することで、自分には思いつかなかった解決方法をその人が教えてくれる場合があります。自分一人の力で悩みを解決できない時は、周りに答えを知ってそうな人を探して相談してみましょう</p>
+      </li>
+      <li class="border-none">
+         <%= link_to("他の解決策を見る","/solution_list") %>
+      </li>
+   </ul>
+</div>
+
+

@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag "users" %>
+
+        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+        <div class="edit-form"> 
+          <h2>ユーザー名</h2>
+          <input name="name" value="<%= @user.name %>">
+          <h2>画像</h2>
+          <input name="image" type="file">
+          <h2>メールアドレス</h2>
+          <input name="email" value="<%= @user.email %>">
+          <button>保存</button>
+        </div>             
+        <% end %>
+     

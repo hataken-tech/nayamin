@@ -1,0 +1,17 @@
+<%= stylesheet_link_tag "first" %>
+    <p>選択肢を明確化できない原因は次の選択肢のうちどれに一番近いですか？</p>
+   
+<div class="box">
+   <ul>
+      <li>
+         <%= link_to("めんどくさい、やる気が出ない","/motivation") %>
+      </li>
+      <li>
+         <%= link_to("今の自分の能力や知識量では選択肢を明確化できない","/my_lack") %>
+      </li>
+      <li class="border-none">
+         <%= link_to("ここに当てはまる選択肢がない","/proposal") %>
+      </li>
+   </ul>
+</div>
+

@@ -1,0 +1,12 @@
+<%= stylesheet_link_tag "other" %>
+
+
+<%= form_tag("/other/#{@hataken.id}/update") do %> 
+　　<%= link_to("削除", "/other/#{@hataken.id}/destroy", {method:"post", class:"text-destroy"}) %>
+　<textarea name="name" placeholder="400文字以内で入力してください">
+　    
+　    <%= @hataken.name %></textarea>
+
+  <button>保存</button>
+<% end %>
+  

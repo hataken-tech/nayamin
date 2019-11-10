@@ -1,0 +1,39 @@
+// Place all the styles related to the solution controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.message{
+    width:1000px;
+    border:dashed 1px white;
+    border-radius:10px;
+    padding:5px;
+    position:absolute;
+    top:70px;
+    background-color:white;
+    color:black;
+    text-align:left;
+    font-size:15px;
+}
+
+body{
+    background-image:url("https://cdn.pixabay.com/photo/2014/02/27/16/10/spring-276014_960_720.jpg");
+}
+
+#all-nayamin{
+    font-weight:bold;
+}
+
+#solution{
+    color:red;
+    margin-top:100px;
+}
+
+#calm-down{
+    margin:20px auto;
+    width:1000px;
+    p{
+        text-align:center;
+        color:white;
+       
+    }
+}

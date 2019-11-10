@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag "first" %>
+    <p>行動に移せない理由は次の選択肢の中でどれに一番近いですか？</p>
+ 
+<div class="box">
+   <ul>
+      <li>
+         <%= link_to("やる気が出ない","/motivation") %>
+      </li>
+      <li>
+         <%= link_to("ストレスや不安","/stress") %>
+      </li>
+      <li>
+         <%= link_to("自分の能力や知識が足りないこと","/my_lack") %>
+      </li>
+       <li class="border-none">
+         <%= link_to("ここに当てはまる選択肢がない","/proposal") %>
+      </li>
+   </ul>
+</div>
+

@@ -1,0 +1,13 @@
+<%= stylesheet_link_tag "solution" %>
+<p id="solution">👑解決策一覧👑</p>
+<div class="box solution">
+   <ul>
+      <li>
+         <%= link_to("ここの掲示板に書いてある過去の悩みを見る","/final_question") %>
+         <p class="message">＜解説＞<br>過去の自分の悩みを見てみると「あれ？過去に悩んでいた時は『この悩みは絶対に解決しなきゃいけない！』って気負っていたけど、今考えてみたらすごいしょーもないことで悩んでいたな（笑）」思えることが結構あります。そう考えることができると「それなら今抱えている悩みも実は大したことないのかも」と思えて少しだけ気がラクになるはずです</p>
+      </li>
+      <li class="border-none">
+         <%= link_to("他の解決策を見る","/solution_list") %>
+      </li>
+   </ul>
+</div>

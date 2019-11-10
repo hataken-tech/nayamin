@@ -1,0 +1,19 @@
+// Place all the styles related to the third controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+button{
+    display: block;
+    border-radius: 40px;
+    margin:30px auto;
+    background-color: rgba(63, 191, 116, 0.7);
+    width:300px;
+    cursor:pointer;
+    font-size:15px;
+} 
+button a{
+    color:white;
+}
+
+p{
+    color:white;
+}

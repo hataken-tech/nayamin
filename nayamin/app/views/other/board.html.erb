@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag "other" %>
+<h3>過去の悩み</h3>
+<ul>
+  <% @kenken.each do |tweet| %>
+   
+    <li id="board-box">
+      <% if @current_user %>
+      <%= link_to(tweet.name, "/other/#{tweet.id}", {class:"a-fontsize"}) %>
+      <% end %>
+    </li>
+  
+  <% end %>
+  
+</ul>
