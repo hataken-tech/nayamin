@@ -8,7 +8,7 @@
 
 このWebサービスを使うことで仕事、恋愛、家庭など様々な分野の悩みを解決することができます。使い方については下記のサイトをご参照ください。
 
-https://drive.google.com/open?id=1U13WAmfi3g37RQsGe5-gsE9oMty8AHGO
+https://drive.google.com/open?id=1bUuA3IRhjmeyvPZKz3f5QmiNH1kXxRj1
 
 
 
